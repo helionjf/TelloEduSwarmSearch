@@ -4,7 +4,8 @@ my_tellos = list()
 '''
 // scenario specifique amphi MPG
 // position initiale : 1 2 3 4 5 6 (tous les drones à 12h)// table à midi
-// TO DO : à terminer 
+// Attention à séparer les drones d'au moins 1,5 m
+// Les drones sont tournés vers l'opérateur et font dos à la salle
 '''
 
 #
@@ -32,27 +33,31 @@ with FlyTello(my_tellos, get_status=True) as fly:
     fly.print_status(sync=True)
     # tous montent de 1 m
     fly.up(100)
-    #rotation 180 pour tous
+    # rotation 180 pour tous afin d'être face à la salle
     fly.rotate_cw(180)
-    #deplacement latéral
+    #deplacement latéral, 1, 2 ,3 vers la gauche et 4, 5, 6 vers la droite
     fly.left(200,1)
     fly.left(200,2)
-    fly.right(200,3)
+    fly.left(200,3)
     fly.right(200,4)
+    fly.right(200,5)
+    fly.right(200,6)
     #deplacement escalier
-    fly.up(20,1)
-    fly.up(60,2)
-    fly.up(20,3)
-    fly.up(60,4)
-    #fly.up(40,5)
-    #fly.up(60,6)
+    fly.up(100,1)
+    fly.up(150,2)
+    fly.up(200,3)
+    fly.up(100,4)
+    fly.up(150,5)
+    fly.up(200,6)
     #deplacement avant de 400
     fly.forward(400)
-    #rotation 90
+    #rotation 90 dans le sens horaire pour 1, 2, 3 et anti horaire pour 4, 5, 6
     fly.rotate_cw(90,1)
     fly.rotate_cw(90,2)
-    fly.rotate_ccw(90,3)
+    fly.rotate_cw(90,3)
     fly.rotate_ccw(90,4)
+    fly.rotate_ccw(90,5)
+    fly.rotate_ccw(90,6)
     #deplacement avant de 200
     fly.forward(200)
     #rotation 90

@@ -74,6 +74,8 @@ with FlyTello(my_tellos, get_status=True) as fly:
     #flip avant
     fly.flip("forward")
     fly.print_status(sync=True)
+    # on descend de 150 cm
+    fly.down(150)
     # on se retourne vers l'opérateur
     fly.rotate_cw(180)
     #atterrisage

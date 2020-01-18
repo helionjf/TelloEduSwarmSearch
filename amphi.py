@@ -26,7 +26,7 @@ with FlyTello(my_tellos, get_status=True) as fly:
     fly.get_battery()
     fly.print_status(sync=True)
     # tous décolent à 2 secondes d'écart
-    for i in range(1,5):
+    for i in range(1,7):
         fly.takeoff(i)
         fly.pause(2)
     fly.print_status(sync=True)

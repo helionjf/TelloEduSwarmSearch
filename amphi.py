@@ -42,7 +42,7 @@ with FlyTello(my_tellos, get_status=True) as fly:
     fly.right(200,4)
     fly.right(200,5)
     fly.right(200,6)
-    #deplacement escalier
+    #deplacement escalier assez espacé pour éviter les collisions
     fly.up(100,1)
     fly.up(150,2)
     fly.up(200,3)
@@ -58,20 +58,24 @@ with FlyTello(my_tellos, get_status=True) as fly:
     fly.rotate_ccw(90,4)
     fly.rotate_ccw(90,5)
     fly.rotate_ccw(90,6)
-    #deplacement avant de 200
+    #deplacement avant de 200 pour revenir vers le centre
     fly.forward(200)
-    #rotation 90
+    #rotation 90 dans le sens horaire pour 1, 2, 3 et anti horaire pour 4, 5, 6
     fly.rotate_cw(90,1)
     fly.rotate_cw(90,2)
-    fly.rotate_ccw(90,3)
+    fly.rotate_cw(90,3)
     fly.rotate_ccw(90,4)
-    #deplacement latéral de 400
-    fly.forward(400)
-    #rotation 180
+    fly.rotate_ccw(90,5)
+    fly.rotate_ccw(90,6)
+    #deplacement avant de 450 pour revenir vers l'opérateur. un peu plus de 400 pour être sûr de ne pas atterrir sur les spectateurs
+    fly.forward(450)
+    #rotation 180 pour faire face à la salle
     fly.rotate_ccw(180)
     #flip avant
     fly.flip("forward")
     fly.print_status(sync=True)
+    # on se retourne vers l'opérateur
+    fly.rotate_cw(180)
     #atterrisage
     fly.land()
     fly.print_status(sync=True)

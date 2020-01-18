@@ -36,19 +36,17 @@ with FlyTello(my_tellos, get_status=True) as fly:
     # rotation 180 pour tous afin d'être face à la salle
     fly.rotate_cw(180)
     #deplacement latéral, 1, 2 ,3 vers la gauche et 4, 5, 6 vers la droite
-    fly.left(200,1)
-    fly.left(200,2)
-    fly.left(200,3)
-    fly.right(200,4)
-    fly.right(200,5)
-    fly.right(200,6)
+    for i in range(1,4):
+        fly.left(200,i)
+    for i in range(4,7):
+        fly.right(200,i)
     #deplacement escalier assez espacé pour éviter les collisions
-    fly.up(100,1)
-    fly.up(150,2)
-    fly.up(200,3)
-    fly.up(100,4)
-    fly.up(150,5)
-    fly.up(200,6)
+    for i in (1,6):
+        fly.up(200,i)
+    for i in (2,5):
+        fly.up(150,i)
+    for i in (3,4):
+        fly.up(100,i)
     #deplacement avant de 400
     fly.forward(400)
     #rotation 90 dans le sens horaire pour 1, 2, 3 et anti horaire pour 4, 5, 6

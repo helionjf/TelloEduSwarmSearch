@@ -16,8 +16,8 @@ my_tellos.append('0TQDG2KEDB4FH3')  # numéro 1 == DC5CE0
 my_tellos.append('0TQDG2KEDBWK3X')  # numéro 2 == DC5F6C
 my_tellos.append('0TQDFCHEDB3F86')  # numéro 3 == D3FCE4
 my_tellos.append('0TQDG2KEDB04T1')  # numéro 4 == DC5CF3
-#my_tellos.append('0TQDFCHEDBY3H0')  # numéro 5 == D3F926
-#my_tellos.append('0TQDG2KEDBPE19')  # numéro 6 == DC5F05
+my_tellos.append('0TQDFCHEDBY3H0')  # numéro 5 == D3F926
+my_tellos.append('0TQDG2KEDBPE19')  # numéro 6 == DC5F05
 
 
 # Control the flight

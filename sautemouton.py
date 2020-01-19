@@ -21,6 +21,20 @@ my_tellos.append('0TQDG2KEDBWK3X')  # numéro 2 == DC5F6C
 #my_tellos.append('0TQDG2KEDBPE19')  # numéro 6 == DC5F05
 
 
+def saute(i,j):
+        # Le i se lève de 100
+    fly.up(100,i)
+    # Le j tourne sur lui même
+    fly.rotate_ccw(360,j)
+    # Le i avance de 150
+    fly.forward(150,i)
+    # Le j descend de 150
+    fly.down(150,i)
+    # synchronise
+    fly.wait_sync()
+    # Premier tour
+
+
 # Control the flight
 with FlyTello(my_tellos, get_status=True) as fly:
     fly.print_status(sync=True)
@@ -35,15 +49,3 @@ with FlyTello(my_tellos, get_status=True) as fly:
     fly.print_status(sync=True)
 
 
-def saute(i,j):
-        # Le i se lève de 100
-    fly.up(100,i)
-    # Le j tourne sur lui même
-    fly.rotate_ccw(360,j)
-    # Le i avance de 150
-    fly.forward(150,i)
-    # Le j descend de 150
-    fly.down(150,i)
-    # synchronise
-    fly.wait_sync()
-    # Premier tour

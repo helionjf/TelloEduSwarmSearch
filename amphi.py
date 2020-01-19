@@ -47,35 +47,32 @@ with FlyTello(my_tellos, get_status=True) as fly:
         fly.up(150,i)
     for i in (3,4):
         fly.up(100,i)
-    #deplacement avant de 400
-    fly.forward(400)
+    #deplacement synchronisé avant de 400
+    fly.forward(400,sync=True)
     #rotation 90 dans le sens horaire pour 1, 2, 3 et anti horaire pour 4, 5, 6
-    fly.rotate_cw(90,1)
-    fly.rotate_cw(90,2)
-    fly.rotate_cw(90,3)
-    fly.rotate_ccw(90,4)
-    fly.rotate_ccw(90,5)
-    fly.rotate_ccw(90,6)
-    #deplacement avant de 200 pour revenir vers le centre
-    fly.forward(200)
+    for i in range(1,4):
+        fly.rotate_cw(90,i)
+    for i in range(4,7):
+        fly.rotate_ccw(90,i)
+    #deplacement synchronisé avant de 200 pour revenir vers le centre
+    fly.forward(200,sync=True)
     #rotation 90 dans le sens horaire pour 1, 2, 3 et anti horaire pour 4, 5, 6
-    fly.rotate_cw(90,1)
-    fly.rotate_cw(90,2)
-    fly.rotate_cw(90,3)
-    fly.rotate_ccw(90,4)
-    fly.rotate_ccw(90,5)
-    fly.rotate_ccw(90,6)
-    #deplacement avant de 450 pour revenir vers l'opérateur. un peu plus de 400 pour être sûr de ne pas atterrir sur les spectateurs
-    fly.forward(450)
+    for i in range(1,4):
+        fly.rotate_cw(90,i)
+    for i in range(4,7):
+        fly.rotate_ccw(90,i)
+    #vitesse maximum pour tous
+    fly.set_speed(speed=100,sync=True)
+    #deplacement avant synchronisé de 450 pour revenir vers l'opérateur. un peu plus de 400 pour être sûr de ne pas atterrir sur les spectateurs
+    fly.forward(dist=450,sync=True)
     #rotation 180 pour faire face à la salle
-    fly.rotate_ccw(180)
+    fly.rotate_ccw(180,sync=True)
     #flip avant
-    fly.flip("forward")
-    fly.print_status(sync=True)
+    fly.flip("forward",sync=True)
     # on descend de 150 cm
     fly.down(150)
     # on se retourne vers l'opérateur
     fly.rotate_cw(180)
     #atterrisage
-    fly.land()
+    fly.land(sync=True)
     fly.print_status(sync=True)

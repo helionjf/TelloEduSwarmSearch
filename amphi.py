@@ -73,6 +73,8 @@ with FlyTello(my_tellos, get_status=True) as fly:
     fly.down(150)
     # on se retourne vers l'opérateur
     fly.rotate_cw(180)
+    #on remet la vitesse à 10
+    fly.set_speed(speed=10)    
     #atterrisage
     fly.land(sync=True)
     fly.print_status(sync=True)

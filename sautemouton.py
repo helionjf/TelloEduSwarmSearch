@@ -44,7 +44,7 @@ with FlyTello(my_tellos, get_status=True) as fly:
     i,j = 2,1
     saute(i,j)
     # fly.flip(f)
-    fly.back(200,sync=True)
+    fly.back(300,sync=True)
     fly.land()
     fly.print_status(sync=True)
 

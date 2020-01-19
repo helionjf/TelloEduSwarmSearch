@@ -28,7 +28,7 @@ def saute(i,j):
     fly.rotate_ccw(360,j)
     # Le i avance de 150
     fly.forward(150,i)
-    # Le j descend de 150
+    # Le i descend de 150
     fly.down(150,i)
     # synchronise
     fly.wait_sync()
@@ -43,7 +43,6 @@ with FlyTello(my_tellos, get_status=True) as fly:
     saute(i,j)
     i,j = 2,1
     saute(i,j)
-    # fly.flip(f)
     fly.back(300,sync=True)
     fly.land()
     fly.print_status(sync=True)

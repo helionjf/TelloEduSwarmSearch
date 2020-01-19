@@ -28,26 +28,11 @@ my_tellos.append('0TQDG2KEDBWK3X')  # numéro 2 == DC5F6C
 
 # Control the flight
 with FlyTello(my_tellos, get_status=True) as fly:
-    # TO DO : battery_check 20
-    fly.get_battery()
-    fly.print_status(sync=True)
-    fly.takeoff()
-    fly.print_status(sync=True)
-    # TO DO : ccw 90
+    fly.get_battery(sync=True)
+    fly.takeoff(sync=True)
     fly.up(50,1)
     fly.rotate_ccw(90,1)
     fly.rotate_cw(90,2)
-    fly.forward(100)
-    fly.print_status(sync=True)
-    # TO DO : up 120
-    #fly.print_status(sync=True)
-    # TO DO : 1>forward 100
-    #fly.print_status(sync=True)
-    # TO DO : sync 2
-    #fly.print_status(sync=True)
-    # TO DO : 2>back 100
-    #fly.print_status(sync=True)
-    # TO DO : cw 90
-    #fly.print_status(sync=True)
+    fly.forward(100,sync=True)
     fly.land()
     fly.print_status(sync=True)

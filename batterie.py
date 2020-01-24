@@ -20,7 +20,7 @@ my_tellos.append('0TQDG2KEDBWK3X')  # numéro 2 == DC5F6C
 # my_tellos.append('0TQDFCHEDBY3H0')  # numéro 5 == D3F926
 # my_tellos.append('0TQDG2KEDBPE19')  # numéro 6 == DC5F05
 
-
+print("longueur : ",len(my_tellos))
 
 # parcours de la liste des tellos
 with FlyTello(my_tellos, get_status=True) as fly:

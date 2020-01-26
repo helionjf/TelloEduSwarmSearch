@@ -41,12 +41,12 @@ with FlyTello(my_tellos, get_status=True) as fly:
     for i in range(4,7):
         fly.right(200,i)
     #deplacement escalier assez espacé pour éviter les collisions
-    for i in (1,6):
-        fly.up(200,i)
+    '''for i in (1,6):
+        fly.up(80,i)
     for i in (2,5):
-        fly.up(150,i)
+        fly.up(60,i)
     for i in (3,4):
-        fly.up(100,i)
+        fly.up(40,i)'''
     #deplacement synchronisé avant de 400
     fly.forward(400,sync=True)
     #rotation 90 dans le sens horaire pour 1, 2, 3 et anti horaire pour 4, 5, 6

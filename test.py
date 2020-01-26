@@ -10,3 +10,7 @@ for i in (k,l):
     print(i)
 mafonction(15,24)
 
+p = 5
+while p > 0:
+    print ("valeur de p = ",p)
+    p -=1

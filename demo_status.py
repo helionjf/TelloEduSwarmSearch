@@ -1,11 +1,7 @@
 from fly_tello import FlyTello
 my_tellos = list()
 
-'''
-// table à midi
-// 1=> au sol à 3 h
-// 2=> sur la table à 3 h
-'''
+
 #
 # SIMPLE EXAMPLE - MOST BASIC FLIGHT TO SHOW STATUS MESSAGES
 #
